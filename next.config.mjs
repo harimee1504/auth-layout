@@ -4,7 +4,6 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 const nextConfig = {
   reactStrictMode: true,
-  basePath: "/auth",
   images: {
     remotePatterns: [
       {
@@ -56,7 +55,7 @@ const nextConfig = {
     'swr'
   ],
   webpack: (config) => {
-    config.output.publicPath = "http://localhost:4000/auth/_next/";
+    config.output.publicPath = "http://localhost:4000/_next/";
     config.plugins.push(new MiniCssExtractPlugin({
       filename: 'static/chunks/[name].css',
       chunkFilename: 'static/css/[name].[contenthash].css',
