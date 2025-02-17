@@ -29,6 +29,7 @@ export function NavMain({
     isActive?: boolean
     items?: {
       title: string
+      url: () => void
       args: {
         [key: string]: string
       }
@@ -62,7 +63,6 @@ export function NavMain({
                       <SidebarMenuSubButton asChild>
                       <button
                       onClick={()=>{
-                        console.log(subItem.url);
                         subItem.url();
                       }}    
                       >

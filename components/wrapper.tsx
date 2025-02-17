@@ -5,7 +5,6 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
-// import { SignedOut, SignInButton, UserButton } from "@clerk/clerk-react"
 
 interface DashboardProps {
   /* eslint-disable @typescript-eslint/no-explicit-any */
