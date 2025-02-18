@@ -76,8 +76,7 @@ const nextConfig = {
         remotes: {},
         filename: "static/chunks/remoteEntry.js",
         exposes: {
-          "./wrapper": "./components/wrapper-provider.tsx",
-          "./SharedClerkProvider": "./provider/shared-clerk-provider.tsx",
+          "./wrapper": "./components/wrapper-provider.tsx"
         },
         shared: {
           "react": {
