@@ -55,7 +55,7 @@ const nextConfig = {
     'swr'
   ],
   webpack: (config) => {
-    config.output.publicPath = "http://localhost:4000/_next/";
+    // config.output.publicPath = "https://auth-layout.vercel.app/_next/";
     config.plugins.push(new MiniCssExtractPlugin({
       filename: 'static/chunks/[name].css',
       chunkFilename: 'static/css/[name].[contenthash].css',
