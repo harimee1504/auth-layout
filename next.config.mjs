@@ -97,19 +97,19 @@ const nextConfig = {
     );
     return config;
   },
-  assetPrefix: '/auth',
-  async rewrites() {
-    return {
-      beforeFiles: [
-        // This rewrite is necessary to support assetPrefix only in Next 14 and below.
-        // It is not necessary in Next 15.
-        {
-          source: '/auth/_next/:path*',
-          destination: '/_next/:path*',
-        },
-      ],
-    }
-  },
+  // assetPrefix: '/auth',
+  // async rewrites() {
+  //   return {
+  //     beforeFiles: [
+  //       // This rewrite is necessary to support assetPrefix only in Next 14 and below.
+  //       // It is not necessary in Next 15.
+  //       {
+  //         source: '/auth/_next/:path*',
+  //         destination: '/_next/:path*',
+  //       },
+  //     ],
+  //   }
+  // },
 };
 
 export default nextConfig;
