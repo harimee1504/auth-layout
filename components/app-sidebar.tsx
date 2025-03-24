@@ -10,6 +10,7 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar"
+import { ManageOrganizationButton } from "./manage-organization"
 
 interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
   /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -26,6 +27,7 @@ export function AppSidebar({ ...props }: AppSidebarProps) {
         <NavMain items={props.data.navMain} />
       </SidebarContent>
       <SidebarFooter>
+        <ManageOrganizationButton />
         <NavUser/>
       </SidebarFooter>
       <SidebarRail />
