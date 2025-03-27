@@ -80,21 +80,38 @@ const nextConfig = {
         },
         shared: {
           "react": {
+            singleton: true,
             requiredVersion: false,
           },
           "react-dom": {
+            singleton: true,
             requiredVersion: false,
           },
           "@clerk/clerk-react": {
+            singleton: true,
             requiredVersion: false,
-        }
-      },
+          },
+          "@clerk/shared": {
+            singleton: true,
+            requiredVersion: false,
+          }
+        },
         extraOptions: {
           enableImageLoaderFix: true,
           exposeHttpUrl: true,
+          skipSharingNextInternals: true,
         }
       })
     );
+
+    // Add caching configuration
+    config.cache = {
+      type: 'filesystem',
+      buildDependencies: {
+        config: [__filename],
+      },
+    };
+
     return config;
   },
   // assetPrefix: '/auth',

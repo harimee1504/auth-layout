@@ -1,5 +1,6 @@
 import Wrapper from "@/components/wrapper";
 import { ClerkProvider } from "@clerk/clerk-react";
+import { useMemo } from "react";
 
 interface DashboardProps {
   /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -13,9 +14,20 @@ export default function Page({
   data,
   children,
 }: DashboardProps) {
-  return (
-    <ClerkProvider publishableKey={publishableKey}>
+  // Memoize the ClerkProvider to prevent unnecessary re-renders
+  const clerkProvider = useMemo(() => (
+    <ClerkProvider 
+      publishableKey={publishableKey}
+      appearance={{
+        baseTheme: undefined,
+        variables: {
+          colorBackground: "transparent",
+        },
+      }}
+    >
       <Wrapper data={data}>{children}</Wrapper>
     </ClerkProvider>
-  );
+  ), [publishableKey, data, children]);
+
+  return clerkProvider;
 }
