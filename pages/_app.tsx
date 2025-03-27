@@ -1,8 +1,11 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
+import { ClerkProvider } from '@clerk/clerk-react';
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
-        <Component {...pageProps} />
+        <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY as string}>
+            <Component {...pageProps} />
+        </ClerkProvider>
     );
 }
