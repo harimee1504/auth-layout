@@ -1,6 +1,7 @@
-import Wrapper from "@/components/wrapper";
-import { ClerkProvider } from "@clerk/clerk-react";
+'use client'
 
+import Wrapper from "@/components/wrapper"
+import { ClerkProvider } from "@clerk/clerk-react"
 
 interface DashboardProps {
   /* eslint-disable @typescript-eslint/no-explicit-any */
