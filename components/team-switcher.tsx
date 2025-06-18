@@ -46,8 +46,20 @@ export function TeamSwitcher() {
   const { setActive } = useOrganizationList();
   const {organization: activeTeam} = useOrganization();
   const {user} = useUser();
-  if (!user || !activeTeam) return <OrganizationLoading />;
+  
+  if (!user) return <OrganizationLoading />;
+  
   const organizationList = user.organizationMemberships;
+  
+  React.useEffect(() => {
+    if (!activeTeam && organizationList && organizationList.length > 0 && setActive) {
+      setActive({ organization: organizationList[0].organization.id });
+    }
+  }, [activeTeam, organizationList, setActive]);
+  
+  if (!activeTeam || !organizationList || organizationList.length === 0) {
+    return <OrganizationLoading />;
+  }
 
   return (
     <SidebarMenu>
