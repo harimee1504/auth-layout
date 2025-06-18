@@ -47,17 +47,16 @@ export function TeamSwitcher() {
   const {organization: activeTeam} = useOrganization();
   const {user} = useUser();
   
-  if (!user) return <OrganizationLoading />;
-  
-  const organizationList = user.organizationMemberships;
+  const organizationList = user?.organizationMemberships;
   
   React.useEffect(() => {
+    if (!user) return;
     if (!activeTeam && organizationList && organizationList.length > 0 && setActive) {
       setActive({ organization: organizationList[0].organization.id });
     }
-  }, [activeTeam, organizationList, setActive]);
+  }, [activeTeam, organizationList, setActive, user]);
   
-  if (!activeTeam || !organizationList || organizationList.length === 0) {
+  if (!user || !activeTeam || !organizationList || organizationList.length === 0) {
     return <OrganizationLoading />;
   }
 
