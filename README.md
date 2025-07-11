@@ -1,3 +1,5 @@
+**MICROFRONTEND SETUP**
+
 A common authentication boilerplate wrapper, developed in Next.js, is exposed as a remote module and can be utilized as a wrapper component within child applications.
 
 The following illustration depicts the current integration setup
